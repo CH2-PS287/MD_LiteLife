@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    tools:context=".ui.tracker.AddTrackerActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp">
+
+        <TextView
+            android:id="@+id/tvThingstotrack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bold"
+            android:text="@string/thingstotrack"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/time"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvThingstotrack" />
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardMorning"
+            android:layout_width="99dp"
+            android:layout_height="99dp"
+            android:background="@drawable/card_white_and_shadow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTime">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnMorning"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:drawableTop="@drawable/ic_morning"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="@string/morning"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                app:backgroundTint="@color/white" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardAfternoon"
+            android:layout_width="99dp"
+            android:layout_height="99dp"
+            android:layout_marginStart="25dp"
+            android:background="@drawable/card_white_and_shadow"
+            app:layout_constraintBottom_toBottomOf="@id/cardMorning"
+            app:layout_constraintStart_toEndOf="@id/cardMorning"
+            app:layout_constraintTop_toTopOf="@id/cardMorning">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAfternoon"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:drawableTop="@drawable/ic_afternoon"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="@string/afternoon"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                app:backgroundTint="@color/white" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardNight"
+            android:layout_width="99dp"
+            android:layout_height="99dp"
+            android:layout_marginStart="25dp"
+            android:background="@drawable/card_white_and_shadow"
+            app:layout_constraintBottom_toBottomOf="@id/cardAfternoon"
+            app:layout_constraintStart_toEndOf="@id/cardAfternoon"
+            app:layout_constraintTop_toTopOf="@id/cardAfternoon">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnNight"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:drawableTop="@drawable/ic_night"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="@string/night"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                app:backgroundTint="@color/white" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/tvCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/category"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardNight" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/categoryEditTextLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginTop="8dp"
+            app:endIconMode="dropdown_menu"
+            app:endIconTint="@color/green_600"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvCategory">
+
+            <AutoCompleteTextView
+                android:id="@+id/categoryDropdown"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/border_rectgreen600"
+                android:fontFamily="@font/poppins_medium"
+                android:inputType="none" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/tvPickActivity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/pick"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/categoryEditTextLayout" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/pickEditTextLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginTop="8dp"
+            app:endIconMode="dropdown_menu"
+            app:endIconTint="@color/green_600"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvPickActivity">
+
+            <AutoCompleteTextView
+                android:id="@+id/pickDropdown"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/border_rectgreen600"
+                android:fontFamily="@font/poppins_medium"
+                android:inputType="none" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/saveButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="130dp"
+            android:background="@drawable/button_gradation"
+            android:fontFamily="@font/poppins_bold"
+            android:text="@string/save"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pickEditTextLayout" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

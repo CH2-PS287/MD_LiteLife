@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.tracker.TrackerActivity">
+
+    <LinearLayout
+        android:id="@+id/layoutinfoCalories"
+        android:layout_width="match_parent"
+        android:layout_height="126dp"
+        android:background="@drawable/rounded_bottom_bg"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_extrabold"
+            android:text="@string/calories_today"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            style="@style/Content.Layout"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvgoalsCalories"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="@string/number_remind"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/green_600"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/batas"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/green_600"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/minus"
+                android:textColor="@color/green_600"
+                android:textSize="15sp"
+                android:layout_marginStart="12dp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="20dp">
+
+                <TextView
+                    android:id="@+id/tvconsumedCalories"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="@string/number_remind"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@color/green_600"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/consumed"
+                    android:textColor="@color/green_600"
+                    android:textSize="12sp" />
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/plus"
+                android:textColor="@color/green_600"
+                android:textSize="15sp"
+                android:layout_marginStart="12dp"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="20dp">
+
+                <TextView
+                    android:id="@+id/tvexerciseCalories"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="@string/number_remind"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@color/green_600"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/exercise"
+                    android:textColor="@color/green_600"
+                    android:textSize="12sp" />
+            </LinearLayout>
+            <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/equal"
+            android:textColor="@color/green_600"
+            android:textSize="15sp"
+            android:layout_marginStart="12dp"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="20dp">
+
+                <TextView
+                    android:id="@+id/tvremainderCalories"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="@string/number_remind"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@color/green_600"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/remainder"
+                    android:textColor="@color/green_600"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/tvMorning"
+        style="@style/Content.Layout"
+        android:layout_marginTop="45dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="@string/morning"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/layoutinfoCalories"
+        app:layout_constraintStart_toStartOf="parent"/>
+    
+    <LinearLayout
+        android:id="@+id/layoutMordning"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="30dp"
+        android:text="@string/no_data"
+        android:background="@drawable/shadow_rounded_10dp"
+        android:fontFamily="@font/poppins_medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvMorning">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/no_data"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="@color/gray_800"
+            android:layout_marginStart="24dp"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvAfternoon"
+        style="@style/Content.Layout"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="@string/afternoon"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/layoutMordning"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <LinearLayout
+        android:id="@+id/layoutAfternoon"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="30dp"
+        android:text="@string/no_data"
+        android:background="@drawable/shadow_rounded_10dp"
+        android:fontFamily="@font/poppins_medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvAfternoon">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/no_data"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="@color/gray_800"
+            android:layout_marginStart="24dp"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvNight"
+        style="@style/Content.Layout"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="@string/night"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/layoutAfternoon"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <LinearLayout
+        android:id="@+id/layoutNight"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="30dp"
+        android:text="@string/no_data"
+        android:background="@drawable/shadow_rounded_10dp"
+        android:fontFamily="@font/poppins_medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvNight">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/no_data"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="@color/gray_800"
+            android:layout_marginStart="24dp"/>
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/toggle_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/green_600"
+        android:src="@drawable/ic_baseline_add_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:maxImageSize="40dp"
+        app:shapeAppearanceOverlay="@style/RoundedCornerFab"
+        app:tint="@color/white" />
+</androidx.constraintlayout.widget.ConstraintLayout>

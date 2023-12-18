@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.auth.PersonalDataActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/linearWelcome"
+            style="@style/Content.Layout"
+            android:layout_marginTop="50dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tvWelcome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="@string/welcome"
+                android:textColor="@color/black"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/tvApp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/poppins_extrabold"
+                android:text="@string/app_name"
+                android:textColor="@color/green_600"
+                android:textSize="24sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvGreeting"
+            style="@style/Content.Layout"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/poppins_regular"
+            android:text="@string/greetings_infaccount"
+            android:textColor="@color/gray_800"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/linearWelcome" />
+
+        <TextView
+            android:id="@+id/tvGender"
+            style="@style/Content.Layout"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/gender"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvGreeting" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/genderEditTextLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="30dp"
+            app:endIconMode="dropdown_menu"
+            app:endIconTint="@color/green_600"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvGender"
+            app:startIconTint="@color/green_600">
+
+            <AutoCompleteTextView
+                android:id="@+id/genderDropdown"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/border_rectgreen600"
+                android:fontFamily="@font/poppins_medium"
+                android:inputType="none" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/tvAge"
+            style="@style/Content.Layout"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/age"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/genderEditTextLayout" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ageEditTextLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="64dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            app:endIconMode="clear_text"
+            app:endIconTint="@color/green_600"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvAge">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ageEditText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/border_rectgreen600"
+                android:fontFamily="@font/poppins_medium"
+                android:inputType="numberDecimal" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <TextView
+            android:id="@+id/tvWeight"
+            style="@style/Content.Layout"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/weight"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ageEditTextLayout" />
+
+        <RelativeLayout
+            android:id="@+id/relativeWeight"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="30dp"
+            app:layout_constraintTop_toBottomOf="@id/tvWeight">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/weightEditTextLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/weightEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_rectgreen600"
+                    android:fontFamily="@font/poppins_medium"
+                    android:inputType="numberDecimal"
+                    tools:ignore="SpeakableTextPresentCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/kgTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/kg"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tvHeight"
+            style="@style/Content.Layout"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/height"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/relativeWeight" />
+
+        <RelativeLayout
+            android:id="@+id/relativeHeight"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="30dp"
+            app:layout_constraintTop_toBottomOf="@id/tvHeight">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/heightEditTextLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/heightEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_rectgreen600"
+                    android:fontFamily="@font/poppins_medium"
+                    android:inputType="numberDecimal"
+                    tools:ignore="SpeakableTextPresentCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/cmTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/cm"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+        </RelativeLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/nextButton"
+            style="@style/Content.Layout"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="35dp"
+            android:background="@drawable/button_gradation"
+            android:fontFamily="@font/poppins_bold"
+            android:text="@string/next"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/relativeHeight" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:layout_constraintTop_toBottomOf="@id/nextButton" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:elevation="10dp"
+            android:indeterminateTint="@color/green_700"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

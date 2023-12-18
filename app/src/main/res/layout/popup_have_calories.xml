@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="#808080">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="324dp"
+        android:layout_height="403dp"
+        android:background="@color/white"
+        app:cardCornerRadius="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp">
+
+            <ImageView
+                android:id="@+id/btnCancel"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="25dp"
+                android:src="@drawable/ic_cancel"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ivPopup"
+                android:layout_width="match_parent"
+                android:layout_height="190dp"
+                android:src="@drawable/ic_calories_remaind"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btnCancel" />
+
+            <TextView
+                android:id="@+id/tvhaveCalories"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="@string/have_calories"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivPopup" />
+
+            <ImageView
+                android:id="@+id/ivFood"
+                android:layout_width="25dp"
+                android:layout_height="16dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/icon_food"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvhaveCalories" />
+
+            <TextView
+                android:id="@+id/tvcalFood"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="14dp"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/consumed"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@id/ivFood"
+                app:layout_constraintTop_toTopOf="@id/ivFood"
+                app:layout_constraintBottom_toBottomOf="@id/ivFood"/>
+
+            <TextView
+                android:id="@+id/tvcalFoodNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="14dp"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/number_remind"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/ivFood"
+                app:layout_constraintBottom_toBottomOf="@id/ivFood"/>
+
+            <ImageView
+                android:id="@+id/ivRemainder"
+                android:layout_width="25dp"
+                android:layout_height="16dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/ic_calculator"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivFood" />
+
+            <TextView
+                android:id="@+id/tvcalRemainder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="14dp"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/remainder"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@id/ivRemainder"
+                app:layout_constraintTop_toTopOf="@id/ivRemainder"
+                app:layout_constraintBottom_toBottomOf="@id/ivRemainder"/>
+
+            <TextView
+                android:id="@+id/tvcalRemainderNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="14dp"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/number_remind"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/ivRemainder"
+                app:layout_constraintBottom_toBottomOf="@id/ivRemainder"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="330dp"
+    android:layout_height="71dp"
+    android:layout_gravity="center_horizontal"
+    android:background="@drawable/card_white_and_shadow"
+    app:cardCornerRadius="13dp"
+    android:layout_marginTop="16dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/ivFood"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="19dp"
+            android:layout_marginEnd="19dp"
+            android:src="@drawable/baseline_fitness_center_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:id="@+id/tvnameFood"
+            android:layout_width="135dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="19dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="@string/name"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@id/ivFood"
+            app:layout_constraintTop_toTopOf="@id/ivFood"
+            app:layout_constraintBottom_toBottomOf="@id/ivFood"
+            android:layout_marginBottom="5dp"/>
+
+
+        <ImageView
+            android:id="@+id/ivcalFood"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/icon_burned"
+            app:layout_constraintEnd_toStartOf="@id/tvcalFood"
+            app:layout_constraintTop_toTopOf="@id/tvcalFood"
+            app:layout_constraintBottom_toBottomOf="@id/tvcalFood"/>
+
+        <TextView
+            android:id="@+id/tvcalFood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="14dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="@string/calories_nutrition"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:layout_marginBottom="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
