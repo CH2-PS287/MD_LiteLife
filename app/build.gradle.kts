@@ -40,11 +40,6 @@ android {
     buildFeatures {
         buildConfig = true
         viewBinding = true
-        compose = true
-    }
-
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.8.10"
     }
 }
 
@@ -55,7 +50,7 @@ dependencies {
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2    .6.2")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.2")
     implementation("androidx.activity:activity-ktx:1.8.0")
     implementation("androidx.room:room-common:2.6.0")
@@ -63,9 +58,5 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.10.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-    implementation("androidx.compose.runtime:runtime-livedata:1.0.3")
-    implementation("androidx.constraintlayout:constraintlayout-compose:1.0.1")
-    implementation("io.coil-kt:coil-compose:2.2.2")
-    implementation("com.github.PhilJay:MPAndroidChart:v3.1.0")
-
+    implementation("androidx.test.ext:junit-ktx:1.1.5")
 }
