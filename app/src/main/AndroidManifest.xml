@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -22,7 +24,7 @@
             android:name=".ui.home.HomeActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.auth.PersonalDataActivity"
+            android:name=".ui.personaldata.PersonalDataActivity"
             android:exported="false" />
         <activity
             android:name=".ui.tracker.TrackerActivity"
@@ -32,7 +34,7 @@
             android:exported="false" />
         <activity
             android:name=".ui.splashscreen.SplashScreenActivity"
-            android:exported="false" />
+            android:exported="false"/>
         <activity
             android:name=".ui.auth.SignupActivity"
             android:exported="false" />
@@ -40,7 +42,7 @@
             android:name=".ui.auth.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.main.MainActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

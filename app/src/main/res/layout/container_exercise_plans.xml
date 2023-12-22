@@ -4,7 +4,7 @@
     android:layout_width="254dp"
     android:layout_height="143dp"
     android:layout_gravity="center_horizontal"
-    android:background="@drawable/card_white_and_shadow"
+    android:background="@drawable/card_white_and_shadow_rd20"
     app:cardCornerRadius="30dp"
     android:layout_marginTop="16dp">
 
@@ -13,7 +13,7 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/tvfoodName"
+            android:id="@+id/tvExerciseName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="19dp"
@@ -25,7 +25,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tvdescFood"
+            android:id="@+id/tvdescExercise"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="19dp"
@@ -37,7 +37,7 @@
             android:textColor="@color/gray_800"
             android:textSize="12sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvfoodName" />
+            app:layout_constraintTop_toBottomOf="@id/tvExerciseName" />
 
         <ImageView
             android:id="@+id/ivFood"
@@ -48,7 +48,7 @@
             android:layout_marginEnd="19dp"
             android:src="@drawable/icon_burned"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvdescFood" />
+            app:layout_constraintTop_toBottomOf="@id/tvdescExercise" />
 
         <TextView
             android:id="@+id/tvCaloriesnumber"

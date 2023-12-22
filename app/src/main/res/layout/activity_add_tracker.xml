@@ -38,7 +38,7 @@
             android:id="@+id/cardMorning"
             android:layout_width="99dp"
             android:layout_height="99dp"
-            android:background="@drawable/card_white_and_shadow"
+            android:background="@drawable/card_white_and_shadow_rd20"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvTime">
 
@@ -59,7 +59,7 @@
             android:layout_width="99dp"
             android:layout_height="99dp"
             android:layout_marginStart="25dp"
-            android:background="@drawable/card_white_and_shadow"
+            android:background="@drawable/card_white_and_shadow_rd20"
             app:layout_constraintBottom_toBottomOf="@id/cardMorning"
             app:layout_constraintStart_toEndOf="@id/cardMorning"
             app:layout_constraintTop_toTopOf="@id/cardMorning">
@@ -81,7 +81,7 @@
             android:layout_width="99dp"
             android:layout_height="99dp"
             android:layout_marginStart="25dp"
-            android:background="@drawable/card_white_and_shadow"
+            android:background="@drawable/card_white_and_shadow_rd20"
             app:layout_constraintBottom_toBottomOf="@id/cardAfternoon"
             app:layout_constraintStart_toEndOf="@id/cardAfternoon"
             app:layout_constraintTop_toTopOf="@id/cardAfternoon">

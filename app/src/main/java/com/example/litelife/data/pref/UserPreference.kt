@@ -8,6 +8,7 @@ import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
+import com.example.litelife.data.model.PersonalDataModel
 import com.example.litelife.data.model.UserModel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
@@ -35,6 +36,22 @@ class UserPreference private constructor(private val dataStore: DataStore<Prefer
         }
     }
 
+    fun getFilled(): Flow<PersonalDataModel> {
+        return dataStore.data.map { preferences ->
+            PersonalDataModel(
+                preferences[TOKEN_KEY] ?: "",
+                preferences[DATA_FILLED] ?: false
+            )
+        }
+    }
+
+    suspend fun saveFilled() {
+        dataStore.edit { preferences ->
+            preferences[TOKEN_KEY] ?: ""
+            preferences[DATA_FILLED] = true
+        }
+    }
+
     suspend fun logout() {
         dataStore.edit { preferences ->
             preferences.clear()
@@ -45,6 +62,7 @@ class UserPreference private constructor(private val dataStore: DataStore<Prefer
         @Volatile
         private var INSTANCE: UserPreference? = null
 
+        private val DATA_FILLED = booleanPreferencesKey("dataFilled")
         private val EMAIL_KEY = stringPreferencesKey("email")
         private val TOKEN_KEY = stringPreferencesKey("token")
         private val IS_LOGIN_KEY = booleanPreferencesKey("isLogin")

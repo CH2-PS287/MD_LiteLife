@@ -37,7 +37,10 @@
     <string name="consumed">Konsumsi</string>
     <string name="info_remind">Sisa = Batas - Konsumsi + Olahraga</string>
     <string name="remainder">Sisa Kalori</string>
-    <string name="number_remind">3800</string>
+    <string name="remain">Sisa</string>
+    <string name="number_remind">1700</string>
+    <string name="number_consumed">0</string>
+    <string name="number_exercise">0</string>
     <string name="water">Air</string>
     <string name="fiber">Serat</string>
     <string name="sodium">Sodium</string>
@@ -55,6 +58,9 @@
     <string name="afternoon">Siang</string>
     <string name="night">Malam</string>
     <string name="equal">=</string>
+    <string name="age_number">21</string>
+    <string name="height_number">164</string>
+    <string name="weight_number">48</string>
     <string name="calories_nutrition">200 kcal</string>
     <string name="calories_today">Kalori Kamu Hari Ini</string>
     <string name="no_data">Tidak ada data</string>
@@ -64,6 +70,7 @@
     <string name="pick">Pilih data</string>
     <string name="save">Simpan</string>
     <string name="excess">Kelebihan</string>
+    <string name="consultation">Konsultasi</string>
     <string name="have_calories">Kalorimu masih tersisa</string>
     <string name="limit_calories">Kalorimu sudah melebihi batas</string>
     <string name="must_doing_exer">Kamu harus berolahraga</string>

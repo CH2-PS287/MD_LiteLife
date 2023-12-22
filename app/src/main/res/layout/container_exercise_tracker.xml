@@ -4,7 +4,7 @@
     android:layout_width="330dp"
     android:layout_height="71dp"
     android:layout_gravity="center_horizontal"
-    android:background="@drawable/card_white_and_shadow"
+    android:background="@drawable/card_white_and_shadow_rd20"
     app:cardCornerRadius="13dp"
     android:layout_marginTop="16dp">
 

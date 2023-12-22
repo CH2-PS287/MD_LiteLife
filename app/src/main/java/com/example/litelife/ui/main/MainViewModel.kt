@@ -1,5 +1,6 @@
 package com.example.litelife.ui.main
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
@@ -15,7 +16,12 @@ class MainViewModel(private val repository: UserRepository) : ViewModel() {
 
     fun logout() {
         viewModelScope.launch {
-            repository.logout()
+            try {
+                repository.logout()
+                Log.d("PersonalDataViewModel", "Logout successful")
+            } catch (e: Exception) {
+                Log.e("PersonalDataViewModel", "Error during logout: ${e.message}", e)
+            }
         }
     }
 }

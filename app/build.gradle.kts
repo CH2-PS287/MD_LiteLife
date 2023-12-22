@@ -15,7 +15,7 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        buildConfigField("String", "BASE_URL", "\"https://story-api.dicoding.dev/v1/\"")
+        buildConfigField("String", "BASE_URL", "\"https://cc-main-backend-sl2ou7b2aa-et.a.run.app/\"")
         vectorDrawables {
             useSupportLibrary = true
         }

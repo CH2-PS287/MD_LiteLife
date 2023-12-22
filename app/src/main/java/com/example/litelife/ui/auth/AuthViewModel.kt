@@ -1,9 +1,12 @@
 package com.example.litelife.ui.auth
 
 import android.util.Log
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
+import com.example.litelife.data.model.PersonalDataModel
 import com.example.litelife.data.model.UserModel
 import com.example.litelife.data.repo.UserRepository
 import com.example.litelife.data.response.ErrorResponse
@@ -73,11 +76,19 @@ class AuthViewModel(private val repository: UserRepository) : ViewModel() {
                 if (response.isSuccessful) {
                     signupUser.postValue(response.body())
                 } else {
-                    response.errorBody()?.let {
+                    try {
                         val jsonInString = response.errorBody()?.string()
                         val errorBody = Gson().fromJson(jsonInString, ErrorResponse::class.java)
-                        val errorMessage = errorBody?.message ?: "Unknown error occurred"
-                        error.postValue(ErrorResponse(message = errorMessage))
+
+                        if (errorBody?.message is String) {
+                            val errorMessage = errorBody.message
+                            error.postValue(ErrorResponse(message = errorMessage))
+                        } else {
+                            val errorMessage = "Unknown error occurred"
+                            error.postValue(ErrorResponse(message = errorMessage))
+                        }
+                    } catch (e: Exception) {
+                        error.postValue(ErrorResponse(message = e.message))
                     }
                 }
             }
@@ -94,5 +105,9 @@ class AuthViewModel(private val repository: UserRepository) : ViewModel() {
         viewModelScope.launch {
             repository.saveSession(user)
         }
+    }
+
+    fun getFilled(): LiveData<PersonalDataModel> {
+        return repository.getFilled().asLiveData()
     }
 }

@@ -7,6 +7,7 @@ import com.example.litelife.data.di.Injection
 import com.example.litelife.data.repo.UserRepository
 import com.example.litelife.ui.auth.AuthViewModel
 import com.example.litelife.ui.main.MainViewModel
+import com.example.litelife.ui.personaldata.PersonalDataViewModel
 
 class ViewModelFactory(private val repository: UserRepository) : ViewModelProvider.NewInstanceFactory() {
 
@@ -18,6 +19,9 @@ class ViewModelFactory(private val repository: UserRepository) : ViewModelProvid
             }
             modelClass.isAssignableFrom(AuthViewModel::class.java) -> {
                 AuthViewModel(repository) as T
+            }
+            modelClass.isAssignableFrom(PersonalDataViewModel::class.java) -> {
+                PersonalDataViewModel(repository) as T
             }
             else -> throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
         }

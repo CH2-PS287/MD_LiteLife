@@ -3,7 +3,9 @@ package com.example.litelife.ui.auth
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.text.Editable
 import android.text.TextUtils
+import android.text.TextWatcher
 import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
@@ -34,6 +36,24 @@ class SignupActivity : AppCompatActivity() {
         binding = ActivitySignupBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.passwordEditText.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+                if (s.toString().length < 8) {
+                    binding.passwordEditText.error = "Kata sandi tidak boleh kurang dari 8 karakter"
+                    binding.passwordEditTextLayout.endIconMode = TextInputLayout.END_ICON_NONE
+                } else {
+                    binding.passwordEditText.error = null
+                    binding.passwordEditTextLayout.endIconMode =
+                        TextInputLayout.END_ICON_PASSWORD_TOGGLE
+                }
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+            }
+        })
         showLoading(false)
         setupAction()
         setupView()
@@ -152,7 +172,7 @@ class SignupActivity : AppCompatActivity() {
             .setMessage("Akun berhasil dibuat")
             .setPositiveButton("OK") { dialog, _ ->
                 dialog.dismiss()
-                startActivity(Intent(this, PersonalDataActivity::class.java))
+                startActivity(Intent(this, LoginActivity::class.java))
                 finish()
             }
             .create()

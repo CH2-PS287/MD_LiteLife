@@ -3,7 +3,9 @@ package com.example.litelife.ui.auth
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.text.Editable
 import android.text.TextUtils
+import android.text.TextWatcher
 import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
@@ -15,7 +17,8 @@ import com.example.litelife.R
 import com.example.litelife.ViewModelFactory
 import com.example.litelife.data.model.UserModel
 import com.example.litelife.databinding.ActivityLoginBinding
-import com.example.litelife.ui.main.MainActivity
+import com.example.litelife.ui.home.HomeActivity
+import com.example.litelife.ui.personaldata.PersonalDataActivity
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 
@@ -33,6 +36,24 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.passwordEditText.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+                if (s.toString().length < 8) {
+                    binding.passwordEditText.error = "Kata sandi tidak boleh kurang dari 8 karakter"
+                    binding.passwordEditTextLayout.endIconMode = TextInputLayout.END_ICON_NONE
+                } else {
+                    binding.passwordEditText.error = null
+                    binding.passwordEditTextLayout.endIconMode =
+                        TextInputLayout.END_ICON_PASSWORD_TOGGLE
+                }
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+            }
+        })
         showLoading(false)
         setupAction()
         setupView()
@@ -65,8 +86,8 @@ class LoginActivity : AppCompatActivity() {
         }
 
         viewModel.loginUser.observe(this) { response ->
-            response?.loginResult?.let { loginResult ->
-                val name = loginResult.name ?: "DefaultName"
+            response?.result?.let { loginResult ->
+                val name = loginResult.userId ?: "DefaultName"
                 val token = loginResult.token ?: "DefaultToken"
                 viewModel.saveSession(UserModel(name, token))
             } ?: showErrorDialog("Login result is null")
@@ -80,6 +101,8 @@ class LoginActivity : AppCompatActivity() {
                 showErrorDialog(errorResponse.message ?: "Unknown error occurred")
             }
         }
+
+
     }
 
     private fun showErrorDialog(errorMessage: String) {
@@ -99,8 +122,9 @@ class LoginActivity : AppCompatActivity() {
             .setMessage("Anda telah berhasil masuk")
             .setPositiveButton("OK") { dialog, _ ->
                 dialog.dismiss()
-                val mainIntent = Intent(this, MainActivity::class.java)
-                startActivity(mainIntent)
+                checkFilled()
+//                startActivity(Intent(this, HomeActivity::class.java))
+
             }
             .create()
             .show()
@@ -155,6 +179,17 @@ class LoginActivity : AppCompatActivity() {
     private fun signUpButton() {
         binding.signupButton.setOnClickListener {
             startActivity(Intent(this, SignupActivity::class.java))
+        }
+    }
+
+    private fun checkFilled() {
+        viewModel.getFilled().observe(this) { user ->
+            if (user.dataFilled) {
+                startActivity(Intent(this, HomeActivity::class.java))
+            } else {
+                startActivity(Intent(this, PersonalDataActivity::class.java))
+                finish()
+            }
         }
     }
 }
