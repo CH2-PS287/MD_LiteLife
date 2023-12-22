@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.litelife.data.adapter.ExerciseAdapter
+import com.example.litelife.data.response.ExerciseResponseItem
 import com.example.litelife.databinding.FragmentListActivityTrackerBinding
 import com.example.litelife.ui.plans.PlansViewModel
 
@@ -25,6 +26,9 @@ class ExerciseFragment : Fragment() {
         return binding.root
     }
 
+    fun updateExerciseList(exerciseList: List<ExerciseResponseItem>) {
+        adapter.setList(exerciseList)
+    }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(requireActivity())[PlansViewModel::class.java]
@@ -42,7 +46,7 @@ class ExerciseFragment : Fragment() {
         }
         viewModel.listExercise.observe(viewLifecycleOwner) { followers ->
             followers?.let {
-                adapter.setListUser(it)
+                adapter.setList(it)
             }
         }
     }

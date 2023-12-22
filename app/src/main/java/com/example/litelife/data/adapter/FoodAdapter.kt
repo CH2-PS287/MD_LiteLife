@@ -18,7 +18,7 @@ class FoodAdapter : ListAdapter<FoodResponse, FoodAdapter.MyViewHolder>(DIFF_CAL
 
     private val list = ArrayList<FoodResponseItem>()
 
-    fun setListUser(users: List<FoodResponseItem>) {
+    fun setList(users: List<FoodResponseItem>) {
         list.clear()
         list.addAll(users)
         notifyDataSetChanged()

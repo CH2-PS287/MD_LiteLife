@@ -19,7 +19,7 @@ class ExerciseAdapter : ListAdapter<ExerciseResponse, ExerciseAdapter.MyViewHold
 
     private val list = ArrayList<ExerciseResponseItem>()
 
-    fun setListUser(users: List<ExerciseResponseItem>) {
+    fun setList(users: List<ExerciseResponseItem>) {
         list.clear()
         list.addAll(users)
         notifyDataSetChanged()

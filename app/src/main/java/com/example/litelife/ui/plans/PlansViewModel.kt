@@ -70,6 +70,7 @@ class   PlansViewModel : ViewModel()  {
                             updatedList.addAll(food)
                         }
                         _listFood.postValue(updatedList)
+                        Log.d("PlansViewModel", "Food list size: ${updatedList.size}")
                     }
                 } else {
                     response.errorBody()?.let {
